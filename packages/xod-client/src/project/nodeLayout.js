@@ -7,14 +7,16 @@ import { foldMaybe } from 'xod-func-tools';
 // to make pixel perfect stroke instead of blurred one
 export const COMPENSATE_SVG = 0.5;
 
-export const BASE_SIZE_UNIT = 5;
+export const BASE_SIZE_UNIT = 3;
 
-export const NODE_HEIGHT = BASE_SIZE_UNIT * 13;
+export const GRID_SIZE = BASE_SIZE_UNIT * 7;
 
-const GAP_BETWEEN_LINES = BASE_SIZE_UNIT * 8;
+export const NODE_HEIGHT = GRID_SIZE * 3;
+
+const GAP_BETWEEN_LINES = GRID_SIZE * 2;
 
 export const SLOT_SIZE = {
-  WIDTH: BASE_SIZE_UNIT * 8 + 4,
+  WIDTH: GRID_SIZE * 2,
   HEIGHT: NODE_HEIGHT + GAP_BETWEEN_LINES,
   GAP: GAP_BETWEEN_LINES,
 };

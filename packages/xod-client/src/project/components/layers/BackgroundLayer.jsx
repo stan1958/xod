@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { noop } from 'xod-func-tools';
 
-import { SLOT_SIZE, NODE_HEIGHT } from '../../nodeLayout';
+import { SLOT_SIZE, NODE_HEIGHT, GRID_SIZE } from '../../nodeLayout';
 
 // Add 0.5 to compensate blurring of pattern
 const COMPENSATE_BLUR = 0.5;
@@ -12,23 +12,23 @@ const NodeSlotPattern = ({ offset }) => (
     id="patch_bg_pattern"
     x={Math.round(offset.x) - COMPENSATE_BLUR}
     y={Math.round(offset.y) - COMPENSATE_BLUR}
-    width={SLOT_SIZE.WIDTH}
-    height={SLOT_SIZE.HEIGHT}
+    width={GRID_SIZE}
+    height={GRID_SIZE}
     patternUnits="userSpaceOnUse"
   >
     <g stroke="none" fill="none">
-      <line x1={COMPENSATE_BLUR} y1={1} x2={COMPENSATE_BLUR} y2={NODE_HEIGHT} />
+      <line x1={COMPENSATE_BLUR} y1={1} x2={COMPENSATE_BLUR} y2={GRID_SIZE} />
       <line
         x1={0}
         y1={COMPENSATE_BLUR}
-        x2={SLOT_SIZE.WIDTH}
+        x2={GRID_SIZE}
         y2={COMPENSATE_BLUR}
       />
       <line
         x1={0}
-        y1={NODE_HEIGHT + COMPENSATE_BLUR}
-        x2={SLOT_SIZE.WIDTH}
-        y2={NODE_HEIGHT + COMPENSATE_BLUR}
+        y1={GRID_SIZE + COMPENSATE_BLUR}
+        x2={GRID_SIZE}
+        y2={GRID_SIZE + COMPENSATE_BLUR}
       />
     </g>
   </pattern>
